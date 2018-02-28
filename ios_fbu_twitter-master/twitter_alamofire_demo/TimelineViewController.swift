@@ -13,20 +13,35 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
     var tweets: [Tweet] = []
     
     @IBOutlet weak var tableView: UITableView!
+    var refreshControl: UIRefreshControl!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // setting up activity indicator
+        self.activityIndicator.startAnimating()
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(TimelineViewController.didPullToRefresh(_:) ), for: . valueChanged)
+        didPullToRefresh(refreshControl)
+        tableView.insertSubview(refreshControl, at: 0)
+        
+        // set up table view
         tableView.dataSource = self
         tableView.delegate = self
         
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 100
-        
+    }
+    
+    @objc func didPullToRefresh(_ refreshControl:  UIRefreshControl){
+        // call api to get new tweets
         APIManager.shared.getHomeTimeLine { (tweets, error) in
             if let tweets = tweets {
                 self.tweets = tweets
                 self.tableView.reloadData()
+                self.refreshControl.endRefreshing()
+                self.activityIndicator.stopAnimating()
             } else if let error = error {
                 print("Error getting home timeline: " + error.localizedDescription)
             }

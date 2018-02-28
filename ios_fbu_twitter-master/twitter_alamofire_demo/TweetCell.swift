@@ -11,10 +11,17 @@ import UIKit
 class TweetCell: UITableViewCell {
     
     @IBOutlet weak var tweetTextLabel: UILabel!
+    @IBOutlet weak var screenNameLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var userIconImageView: UIImageView!
+    @IBOutlet weak var createdAtLabel: UILabel!
     
     var tweet: Tweet! {
         didSet {
             tweetTextLabel.text = tweet.text
+            nameLabel.text = tweet.user.name
+            screenNameLabel.text = "@" + tweet.user.screenName
+            createdAtLabel.text = tweet.createdAtString
         }
     }
     
@@ -28,5 +35,6 @@ class TweetCell: UITableViewCell {
         
         // Configure the view for the selected state
     }
+    @IBOutlet weak var didTapFavorite: UIImageView!
     
 }
