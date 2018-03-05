@@ -56,6 +56,9 @@ class TimelineViewController: UIViewController, UITableViewDelegate, UITableView
         let cell = tableView.dequeueReusableCell(withIdentifier: "TweetCell", for: indexPath) as! TweetCell
         
         cell.tweet = tweets[indexPath.row]
+        cell.profilePicImageView.layer.masksToBounds = false
+        cell.profilePicImageView.layer.cornerRadius = cell.profilePicImageView.frame.size.width/2
+        cell.profilePicImageView.clipsToBounds = true
         
         return cell
     }

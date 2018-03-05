@@ -13,6 +13,7 @@ class User {
     // MARK: Properties
     var name: String
     var screenName: String
+    var profileImage: String
     var dictionary: [String: Any]?
     private static var _current: User?
     static var current: User? {
@@ -42,6 +43,7 @@ class User {
         self.dictionary = dictionary
         name = dictionary["name"] as! String
         screenName = dictionary["screen_name"] as! String
+        profileImage = dictionary["profile_image_url_https"] as! String
     }
     
     
