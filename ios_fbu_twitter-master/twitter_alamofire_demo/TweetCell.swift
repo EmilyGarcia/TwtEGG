@@ -50,8 +50,8 @@ class TweetCell: UITableViewCell {
         if tweet.favorited == false {
             // update model
             tweet.favorited = true
-            tweet.favoriteCount = tweet.favoriteCount! + 1
-            print(tweet.favoriteCount!)
+            tweet.favoriteCount = tweet.favoriteCount + 1
+            print(tweet.favoriteCount)
             
             // update UI
             self.favoriteButton.isSelected = true
@@ -67,8 +67,8 @@ class TweetCell: UITableViewCell {
         else {
             // update model
             tweet.favorited = false
-            tweet.favoriteCount = tweet.favoriteCount! - 1
-            print(tweet.favoriteCount!)
+            tweet.favoriteCount = tweet.favoriteCount - 1
+            print(tweet.favoriteCount)
             
             // update UI
             self.favoriteButton.isSelected = false
@@ -129,7 +129,7 @@ class TweetCell: UITableViewCell {
     
     func refreshData(){
         // refresh favorites
-        favoriteCountLabel.text = String(describing: tweet.favoriteCount!)
+        favoriteCountLabel.text = String(describing: tweet.favoriteCount)
         if (tweet.favorited == true) {
             favoriteButton.setImage(UIImage(named: "favor-icon-red.png"), for: [])
         }

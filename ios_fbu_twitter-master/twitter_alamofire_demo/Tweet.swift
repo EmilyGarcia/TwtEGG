@@ -14,13 +14,14 @@ class Tweet {
     var id: Int64 // For favoriting, retweeting & replying
     var idString : String
     var text: String // Text content of tweet
-    var favoriteCount: Int? // Update favorite count label
+    var favoriteCount: Int // Update favorite count label
     var favorited: Bool? // Configure favorite button
-    var retweetCount: Int // Update favorite count label
+    var retweetCount: Int // Update retweet count label
     var retweeted: Bool // Configure retweet button
     var user: User // Contains name, screenname, etc. of tweet author
     var createdAtString: String // Display date
     var retweetedStatus: String?
+    var inReplyToStatusId: String?
     
     // MARK: - Create initializer with dictionary
     init(dictionary: [String: Any]) {
@@ -32,6 +33,7 @@ class Tweet {
         retweetCount = dictionary["retweet_count"] as! Int
         retweeted = dictionary["retweeted"] as! Bool
         retweetedStatus = dictionary["retweeted_status"] as? String
+        inReplyToStatusId = dictionary["in_reply_to_status_id"] as? String
         let user = dictionary["user"] as! [String: Any]
         self.user = User(dictionary: user)
         
