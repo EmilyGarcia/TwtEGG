@@ -70,22 +70,23 @@ List an 3rd party libraries, icons, graphics, or other assets you used in your a
     
 # Project 6 - *TwtEGG*
 
-Time spent: **X** hours spent in total
+Time spent: **4** hours spent in total
 
 ## User Stories
 
 The following **required** stories are completed:
 
-- [ ] User can tap on a tweet to view it in a detail view, with controls to retweet, favorite, and reply (2pts)
-- [ ] User can compose a new tweet by tapping on a compose button. (3pts)
-- [ ] When composing a tweet, user sees a countdown for the number of characters remaining for the tweet (out of 140) (2pt)
-- [ ] User can view their profile in a *profile tab* (3pts)
+- [x] User can tap on a tweet to view it in a detail view, with controls to retweet, favorite, and reply (2pts)
+- [x] User can compose a new tweet by tapping on a compose button. (3pts)
+- [x] When composing a tweet, user sees a countdown for the number of characters remaining for the tweet (out of 140) (2pt)
+- [x] User can view their profile in a *profile tab* (3pts)
 - Contains the user header view: picture and tagline
 - Contains a section with the users basic stats: # tweets, # following, # followers
 
 The following **stretch** features are implemented:
 
-- [ ] Profile view includes that user's timeline. (2pts)
+- [x] Profile view includes that user's timeline. (2pts)
+- [x] User can switch between timeline, mentions, or profile view through a tab bar
 - [ ] User can tap the profile image in any tweet to see another user's profile. (1pt)
 - Contains the user header view: picture and tagline.
 - Contains a section with the users basic stats: # tweets, # following, # followers.
@@ -95,7 +96,6 @@ The following **stretch** features are implemented:
 - [ ] Pulling down the profile page should blur and resize the header image. (2pts)
 
 The following **additional** features are implemented:
-
 - [ ] List anything else that you can get done to improve the app functionality!
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
@@ -107,17 +107,17 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/EmilyGarcia/TwtEGG/blob/master/twt2.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+One of the greatest challenges for this project was using the placeholder pod.
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright 2018 Emily Garcia
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
